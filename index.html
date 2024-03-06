@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="styles/fonts.css">
+  <link rel="stylesheet" type="text/css" href="styles/global.css">
+  <link rel="stylesheet" type="text/css" href="styles/lab_four_starter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <title>Common Website Features</title>
+</head>
+<body>
+
+  <section class="hero-container">
+    <div class="hero-text">
+      <h1>Acrylic paint pours are in</h1>
+      <h2>Learn how to make one yourself</h2>
+    </div>
+  </section>
+
+  <section class="container content-container">
+    <div class="content">
+      <img src="Assets/contentpour.png" alt="paint pour with cells and a black background">
+    </div>
+    <div class="content">
+      <h1>Content with Image</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quia ab fugit nisi facilis debitis at recusandae inventore? Accusantium, dolorem.</p>
+      <button class="content-button">
+      Learn More
+      </button>
+    </div>
+  </section>
+
+  <section class="container accordion-container">
+    <h1>
+      Accordian
+    </h1>
+    <button class="accordion">Section 1</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="panel">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </section>
+
+  <section class="footer-container">
+    <div class="footer-content">
+      <div class="footer-linklist">
+        <h2>Links</h2>
+        <ul>
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Accessibility</a></li>
+        </ul>
+      </div> 
+      <div class="footer-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10045.387913017275!2d-114.068673!3d50.99126!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x537170fc54366085%3A0x8290ec8d572dfed3!2sSwinton&#39;s%20Art%20Supplies!5e0!3m2!1sen!2sca!4v1709744060734!5m2!1sen!2sca" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    <div class="copyright-container">
+      <div class="copyright">
+      &copy; Emma Dirks, <span id="year"></span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+      });
+    }
+
+    document.getElementById("year");
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
